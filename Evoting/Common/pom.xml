@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>evoting</groupId>
+		<artifactId>Evoting</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>Common</artifactId>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+			<version>1.64</version>
+		</dependency>
+		<!-- Driver per mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.20</version>
+		</dependency>
+		<!-- Per la conversione in stringa delle eccezioni -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.5</version>
+		</dependency>
+		<!-- Dipendenze per JavaFX -->
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>14</version>
+		</dependency>
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>14</version>
+		</dependency>
+		<dependency>
+			<groupId>gnu.io</groupId>
+			<artifactId>rxtx</artifactId>
+			<version>2.2pre2</version>
+		</dependency>
+	</dependencies>
+</project>

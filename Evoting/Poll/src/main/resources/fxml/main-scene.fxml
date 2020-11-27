@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poll.view.MainScene">
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="menuLogout" mnemonicParsing="false" onAction="#logout" text="Logout" />
+            </items>
+          </Menu>
+            <Menu fx:id="exportMenu" disable="true" mnemonicParsing="false" text="Stampa Risultati">
+              <items>
+                <MenuItem fx:id="csvExportMenu" mnemonicParsing="false" onAction="#exportCSV" text="CSV" />
+                  <MenuItem fx:id="pdfExportMenu" mnemonicParsing="false" onAction="#exportPDF" text="PDF" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <SplitPane fx:id="resPane" dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+            <VBox fx:id="ballotInfoPane" alignment="CENTER" focusTraversable="true" maxHeight="54.0" minHeight="54.0" prefHeight="54.0" prefWidth="718.0" visible="false">
+               <children>
+                  <Label fx:id="titleLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="718.0" text="[Titolo Scheda]" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="descLabel" alignment="CENTER" prefHeight="26.0" prefWidth="718.0" text="[Descrizione]" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <StackPane focusTraversable="true" prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <BorderPane fx:id="ballotResultsPane" focusTraversable="true" prefHeight="311.0" prefWidth="718.0" visible="false">
+                     <bottom>
+                        <HBox alignment="CENTER" prefHeight="23.0" prefWidth="718.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label text="Preferenze Non Espresse:">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="nullPrefs" text="{N}">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label text="Schede Bianche:">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="emptyBallots" text="{M}">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="20.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </BorderPane.margin>
+                        </HBox>
+                     </bottom>
+                     <center>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TableView fx:id="candidatesTbl" maxHeight="5000.0" maxWidth="5000.0" minHeight="50.0" minWidth="450.0" prefHeight="50.0" prefWidth="700.0" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="codColumn" editable="false" minWidth="0.0" prefWidth="100.0" sortable="false" style="-fx-alignment: CENTER;" text="Codice" />
+                                  <TableColumn fx:id="nameColumn" editable="false" minWidth="0.0" prefWidth="350.0" sortable="false" style="-fx-alignment: CENTER;" text="Candidato" />
+                                    <TableColumn fx:id="votesColumn" editable="false" minWidth="0.0" prefWidth="100.0" sortable="false" style="-fx-alignment: CENTER;" text="N. Voti" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TableView>
+                              <TableView fx:id="optionsTbl" maxHeight="5000.0" maxWidth="5000.0" minHeight="50.0" minWidth="450.0" prefHeight="50.0" prefWidth="700.0" VBox.vgrow="ALWAYS">
+                                 <columns>
+                                    <TableColumn fx:id="optionColumn" editable="false" minWidth="0.0" prefWidth="350.0" sortable="false" style="-fx-alignment: CENTER;" text="Opzione" />
+                                    <TableColumn fx:id="optVotesColumn" editable="false" minWidth="0.0" prefWidth="100.0" sortable="false" style="-fx-alignment: CENTER;" text="N. Voti" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="25.0" right="25.0" top="5.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </center>
+                  </BorderPane>
+                  <VBox fx:id="loadingPane" alignment="CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="100.0" visible="false">
+                     <children>
+                        <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="loadingLabel" text="Attendere... Spoglio in corso....">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+        </items>
+      </SplitPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="70.0" prefWidth="720.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="prevBtn" mnemonicParsing="false" onAction="#showPrevResults" text="&lt;-" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="startBtn" mnemonicParsing="false" onAction="#startCounting" prefHeight="0.0" prefWidth="144.0" text="Inizia Spoglio">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="nextBtn" mnemonicParsing="false" onAction="#showNextResults" text="-&gt;" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

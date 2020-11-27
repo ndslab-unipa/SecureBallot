@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seggio.view.Activation">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Inserisci la Chiave di Sessione">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="sessKeyField" onKeyReleased="#checkKey" prefHeight="41.0" prefWidth="480.0" text="QT1WNUR17FKVQW55VX1EQL2WRGG4NDJZ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="100.0" right="100.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="sessKeyBtn" mnemonicParsing="false" onAction="#checkSessionKey" text="Attiva Terminale">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Label fx:id="welcomeLabel" text="Seggio" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="15.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+</BorderPane>

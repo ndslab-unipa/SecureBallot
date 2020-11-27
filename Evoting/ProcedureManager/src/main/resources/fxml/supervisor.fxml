@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="procmgr.view.Supervisor">
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="87.0" prefWidth="720.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="Logout">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#logout" text="Esci" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label alignment="TOP_LEFT" text="Gestore Procedure">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Accesso come supervisore">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </Label>
+            <Separator prefWidth="200.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="331.0" prefWidth="720.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="60.0" prefWidth="298.0" text="Questa è una finestra di verifica.">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <Label prefHeight="60.0" prefWidth="575.0" text="Sono state inserite credenziali valide per il ruolo di supervisore.">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="60.0" prefWidth="500.0" text="Per la gestione delle procedure usare il software &quot;Poll&quot;.">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="urna.view.MainScene">
+   <center>
+      <ScrollPane fx:id="scroll" hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="720.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="logVBox" spacing="8.0" />
+         </content>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </ScrollPane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="closeSessionMenu" mnemonicParsing="false" onAction="#closeSession" text="Chiudi Sessione" />
+                  <MenuItem fx:id="logoutMenu" mnemonicParsing="false" onAction="#logout" text="Logout" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Altro">
+               <items>
+                  <MenuItem fx:id="statsMenu" mnemonicParsing="false" onAction="#showStats" text="Statistiche" />
+               </items>
+            </Menu>
+            <Menu fx:id="developerMenu" mnemonicParsing="false" text="Developer">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#deactivateStation" text="Disattiva Seggio" />
+                  <MenuItem mnemonicParsing="false" onAction="#deactivateSubStation" text="Disattiva Seggio Ausiliario" />
+                  <MenuItem mnemonicParsing="false" onAction="#deactivatePost" text="Disattiva Postazione" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>evoting</groupId>
+  <artifactId>Evoting</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+  	<module>Common</module>
+    <module>Poll</module>
+  	<module>Postazione</module>
+    <module>ProcedureManager</module>
+  	<module>Seggio</module>
+    <module>SeggioAusiliario</module>
+  	<module>Test</module>
+  	<module>Urna</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>14</maven.compiler.target>
+    <maven.compiler.source>14</maven.compiler.source>
+  </properties>
+
+</project>

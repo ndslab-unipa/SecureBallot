@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seggio.aux.view.Waiting">
+   <top>
+      <Label fx:id="welcomeLabel" text="Benvenuto in Seggio Ausiliario!" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="15.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Attivazione Completata">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label text="In Attesa del Seggio Principale">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
